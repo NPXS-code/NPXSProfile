@@ -180,17 +180,13 @@
             class="max-w-[90%] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300">
     </div>
 
-    <!-- Background Glowing Blobs -->
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div
-            class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-brand-purple/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob">
-        </div>
-        <div
-            class="absolute top-[20%] right-[-10%] w-96 h-96 bg-brand-cyan/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000">
-        </div>
-        <div
-            class="absolute bottom-[-20%] left-[20%] w-96 h-96 bg-brand-pink/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000">
-        </div>
+    <!-- Background Image -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none bg-[#09090b]">
+        
+        <!-- Image BG -->
+        <div class="absolute inset-0 bg-[url('images/NPXS.jpg')] bg-cover bg-center opacity-80 mix-blend-overlay"></div>
+    <!-- Fade Overlay (Bottom → Top) -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/40 to-transparent"></div>     
     </div>
 
     <!-- Navbar -->
