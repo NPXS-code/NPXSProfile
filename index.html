@@ -167,15 +167,19 @@
 
         /* Swiper Sparks Carousel Custom Styles */
         .mySwiper .swiper-slide {
-            width: 85%;
-            max-width: 550px;
             height: auto;
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 1.5rem;
-            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+        }
+
+        .mySwiper .swiper-slide:not(.swiper-slide-active) {
+            opacity: 0.5;
+            pointer-events: none; /* ป้องกัน Bug ลากเมาส์โดน iframe ของสไลด์ด้านข้าง */
         }
         
         .mySwiper .swiper-slide-active {
+            opacity: 1;
             border-color: rgba(244, 63, 94, 0.4);
             box-shadow: 0 0 40px rgba(244, 63, 94, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
         }
@@ -633,7 +637,11 @@
             effect: 'coverflow',
             grabCursor: true,
             centeredSlides: true,
-            slidesPerView: 'auto',
+            slidesPerView: 1.2,
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            },
             loop: true,
             coverflowEffect: {
                 rotate: 0,
