@@ -573,7 +573,8 @@
                 <div
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden">
-                        <iframe id="yt-player-0" class="yt-iframe w-full h-full relative z-0" loading="lazy"
+                        <iframe id="yt-player-0" class="yt-iframe w-full h-full relative z-0"
+                            poster="https://img.youtube.com/vi/MucBW8knTTA/maxresdefault.jpg"
                             data-src="https://www.youtube.com/embed/MucBW8knTTA?enablejsapi=1&modestbranding=1&rel=0"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -596,7 +597,8 @@
                 <div
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden">
-                        <iframe id="yt-player-1" class="yt-iframe w-full h-full relative z-0" loading="lazy"
+                        <iframe id="yt-player-1" class="yt-iframe w-full h-full relative z-0"
+                            poster="https://img.youtube.com/vi/taHO5FKRs74/maxresdefault.jpg"
                             data-src="https://www.youtube.com/embed/taHO5FKRs74?si=jYBBZ-z7rhFrqhQK"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -619,7 +621,8 @@
                 <div
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden">
-                        <iframe id="yt-player-2" class="yt-iframe w-full h-full relative z-0" loading="lazy"
+                        <iframe id="yt-player-2" class="yt-iframe w-full h-full relative z-0"
+                            poster="https://img.youtube.com/vi/UXU_Q5jEmm4/maxresdefault.jpg"
                             data-src="https://www.youtube.com/embed/UXU_Q5jEmm4?si=QvPN-yEYXg3L7uK2"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -643,7 +646,8 @@
                 <div
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden">
-                        <iframe id="yt-player-3" class="yt-iframe w-full h-full relative z-0" loading="lazy"
+                        <iframe id="yt-player-3" class="yt-iframe w-full h-full relative z-0"
+                            poster="https://img.youtube.com/vi/CzeYpa8etS4/maxresdefault.jpg"
                             data-src="https://www.youtube.com/embed/CzeYpa8etS4?si=lSiMlCyx7EjFa34K"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -833,16 +837,17 @@ newFacebookSlide.querySelector('h3').textContent = 'งาน Motion,Edit Video,
             }
         });
 
-        function loadActiveVideo() {
-            const activeSlide = document.querySelector('.mySwiper .swiper-slide-active');
-            const iframe = activeSlide?.querySelector('.yt-iframe');
-            if (iframe && !iframe.getAttribute('src')) {
-                iframe.src = iframe.dataset.src;
-            }
+        function loadAllVideos() {
+            document.querySelectorAll('.mySwiper .yt-iframe').forEach(iframe => {
+                if (!iframe.getAttribute('src') && iframe.dataset.src) {
+                    iframe.setAttribute('src', iframe.dataset.src);
+                }
+            });
         }
 
-        loadActiveVideo();
-        swiper.on('slideChangeTransitionEnd', loadActiveVideo);
+        loadAllVideos();
+        swiper.on('slideChange', loadAllVideos);
+        swiper.on('slideChangeTransitionEnd', loadAllVideos);
 
         // 1. Preloader
         window.addEventListener('load', () => {
