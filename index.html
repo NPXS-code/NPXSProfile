@@ -577,7 +577,7 @@
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden">
                         <iframe id="yt-player-0" class="yt-iframe w-full h-full relative z-0" loading="lazy"
-                            src="https://www.youtube.com/embed/MucBW8knTTA?enablejsapi=1&modestbranding=1&rel=0"
+                            data-src="https://www.youtube.com/embed/MucBW8knTTA?enablejsapi=1&modestbranding=1&rel=0"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -600,7 +600,7 @@
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden">
                         <iframe id="yt-player-1" class="yt-iframe w-full h-full relative z-0" loading="lazy"
-                            src="https://www.youtube.com/embed/taHO5FKRs74?si=jYBBZ-z7rhFrqhQK"
+                            data-src="https://www.youtube.com/embed/taHO5FKRs74?si=jYBBZ-z7rhFrqhQK"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -623,7 +623,7 @@
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden">
                         <iframe id="yt-player-2" class="yt-iframe w-full h-full relative z-0" loading="lazy"
-                            src="https://www.youtube.com/embed/UXU_Q5jEmm4?si=QvPN-yEYXg3L7uK2"
+                            data-src="https://www.youtube.com/embed/UXU_Q5jEmm4?si=QvPN-yEYXg3L7uK2"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -647,7 +647,7 @@
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden">
                         <iframe id="yt-player-3" class="yt-iframe w-full h-full relative z-0" loading="lazy"
-                            src="https://www.youtube.com/embed/CzeYpa8etS4?si=lSiMlCyx7EjFa34K"
+                            data-src="https://www.youtube.com/embed/CzeYpa8etS4?si=lSiMlCyx7EjFa34K"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -695,12 +695,12 @@
                     </div>
                 </div>
 
-                <!-- ชิ้นที่ 6: แบบทำเป็นปุ่มลิงก์ไปยัง Facebook Reel -->
-                <a href="https://www.facebook.com/reel/24130453133249118" target="_blank"
+                <!-- ชิ้นที่ ุ6 แบบทำเป็นปุ่มลิงก์ไปยัง Facebook Reel -->
+                <a href="https://www.facebook.com/reel/1057563800217993" target="_blank"
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card block cursor-pointer flex flex-col">
 
                     <div class="relative w-full aspect-[9/16] md:aspect-video overflow-hidden rounded-t-3xl bg-black">
-                        <img src="images/525740845_1349378083855472_4988593617756336644_n.jpg" alt="Facebook Reel Cover"
+                        <img src="images/Sequence.jpg" alt="Facebook Reel Cover"
                             loading="lazy"
                             class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
@@ -710,14 +710,13 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="p-5 lg:p-6 bg-brand-card flex flex-col justify-between rounded-b-3xl gap-2">
                         <span
                             class="text-[#1877F2] text-[10px] md:text-xs font-bold mb-2 flex items-center bg-[#1877F2]/10 w-fit px-3 py-1 rounded-full"><i
                                 class="fab fa-facebook mr-2"></i> เปิดใน Facebook</span>
                         <h3
                             class="text-base md:text-lg font-bold text-white leading-snug group-hover:text-brand-pink transition-colors">
-                            งาน Motion,Edit Video,Record voice,Edit voice นโยบาย ผู้ลงสมัครนายก อวท.วสวธ.2569
+                            งาน Videography,Motion,Edit Video,Record voice และ Edit voice นโยบาย ผู้ลงสมัครนายก อวท.วสวธ.2569
                         </h3>
                         <p
                             class="text-brand-cyan text-xs md:text-sm mt-2 font-semibold uppercase tracking-wider flex items-center">
@@ -727,7 +726,8 @@
                 </a>
 
             </div>
-
+                    
+            
             <!-- Custom Swiper Controls -->
             <div class="flex justify-center items-center gap-6 mt-12 relative z-10">
                 <div
@@ -790,6 +790,24 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
+        const portfolioWrapper = document.querySelector('.mySwiper .swiper-wrapper');
+        const portfolioSlides = Array.from(portfolioWrapper.children);
+        const originalFacebookSlide = portfolioSlides[5];
+        const newFacebookSlide = originalFacebookSlide.cloneNode(true);
+        newFacebookSlide.href = 'https://www.facebook.com/reel/24130453133249118';
+        newFacebookSlide.querySelector('img').src = 'images/525740845_1349378083855472_4988593617756336644_n.jpg';
+newFacebookSlide.querySelector('h3').textContent = 'งาน Motion,Edit Video,Record voice และ Edit voice นโยบาย ผู้ลงสมัครนายก อวท.วสวธ.2569';
+
+        [
+            portfolioSlides[0],
+            portfolioSlides[1],
+            portfolioSlides[3],
+            portfolioSlides[2],
+            originalFacebookSlide,
+            newFacebookSlide,
+            portfolioSlides[4]
+        ].forEach(slide => portfolioWrapper.appendChild(slide));
+
         // Init Swiper for Sparks Carousel Effect
         const swiper = new Swiper('.mySwiper', {
             effect: 'coverflow',
@@ -817,6 +835,17 @@
                 prevEl: '.swiper-button-prev-custom',
             }
         });
+
+        function loadActiveVideo() {
+            const activeSlide = document.querySelector('.mySwiper .swiper-slide-active');
+            const iframe = activeSlide?.querySelector('.yt-iframe');
+            if (iframe && !iframe.src) {
+                iframe.src = iframe.dataset.src;
+            }
+        }
+
+        loadActiveVideo();
+        swiper.on('slideChangeTransitionEnd', loadActiveVideo);
 
         // 1. Preloader
         window.addEventListener('load', () => {
