@@ -19,9 +19,6 @@
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- YouTube IFrame API -->
-    <script src="https://www.youtube.com/iframe_api"></script>
-
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -410,7 +407,7 @@
                     <div class="absolute inset-4 border border-brand-purple/40 rounded-full animate-pulse-slow"></div>
                     <!-- Image -->
                     <div class="absolute inset-8 rounded-full overflow-hidden border-4 border-brand-card shadow-2xl">
-                        <img src="images/A7S04581.jpg" alt="Profile"
+                        <img src="images/A7S04581-web.jpg" alt="Profile"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-brand-pink/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -674,7 +671,7 @@
                         <div class="photo-folder-back"></div>
                         <img class="photo-folder-image" src="images/Vespapala!!!.jpg" alt="DREAM PHOTO background"
                             loading="lazy">
-                        <img class="photo-folder-image" src="images/A7S07534.jpg" alt="DREAM PHOTO portrait"
+                        <img class="photo-folder-image" src="images/A7S07534-web.jpg" alt="DREAM PHOTO portrait"
                             loading="lazy">
                         <img class="photo-folder-image" src="images/NPXS25580125_43.jpg" alt="DREAM PHOTO work"
                             loading="lazy">
@@ -839,7 +836,7 @@ newFacebookSlide.querySelector('h3').textContent = 'งาน Motion,Edit Video,
         function loadActiveVideo() {
             const activeSlide = document.querySelector('.mySwiper .swiper-slide-active');
             const iframe = activeSlide?.querySelector('.yt-iframe');
-            if (iframe && !iframe.src) {
+            if (iframe && !iframe.getAttribute('src')) {
                 iframe.src = iframe.dataset.src;
             }
         }
