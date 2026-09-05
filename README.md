@@ -1,1 +1,1 @@
-https://npxs-code.github.io/NPXSProfile/
+https://npxs-code.github.io/npxsprofile/
